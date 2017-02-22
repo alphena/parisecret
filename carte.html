@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>Premi&egravere carte</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="styles_carte.css">
+	
+	</head>
+	
+	<body>
+		<div id="bandeauHaut" ><span id="titreCarte">Une premi&egravere carte  </span>
+			<span style="float: right"><button class="button" id='lieu' onclick="markers2('lieu')">Afficher les lieux</button></span>
+			<span style="float: right"><button class="button" id='random' onclick="markers2('random')">Afficher les lieux random</button></span>
+		</div>
+		
+		<div id="googleMap"></div>
+			
+
+	<script src="scripts_carte.js"></script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?&callback=myMap"></script>
+		
+	</body>
+</html>
