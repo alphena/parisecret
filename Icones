@@ -1,0 +1,19 @@
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4,
+    center: {lat: -33, lng: 151}
+  });
+
+  var image = 'images/icon_yellow.png';
+  var placeMarker = new google.maps.Marker({
+    position: {lat: -XX.XXX, lng: XX.XXX},
+    map: map,
+    icon: image
+  });
+}
+
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&signed_in=true&callback=initMap"></script>
+  </body>
+</html>
