@@ -10,21 +10,40 @@ body { line-height:1; }
 ol, ul { list-style:none; }
 table { border-collapse:collapse; border-spacing:0; }
 caption, th, td, h1, h2, h3, h4, h5, h6 { text-align:left; font-weight:normal; }
-body { font-size:12px; font-family:Arial, sans-serif; }
+body { font-size:14px; font-family:Blippo, fantasy;  }
 
-#footer { background:black; position:absolute; height:40px; z-index:1050; width:100%; bottom:0; color:#ccc; line-height:40px; text-align:right; border-top:solid 3px #666666; }
+#footer { background:black; position:absolute; height:40px; z-index:1050; width:100%; bottom:0; color:#ccc; line-height:40px; text-align:right;}
 #footer ul li { padding: 0 20px; }
 #footer a { text-decoration:none; }
 
-#header { height:40px; position:absolute; z-index:1000; background:black; width:100%; border-bottom:solid 3px #666666; border-top:solid 3px #666666;}
+#header { height:50px; position:absolute; z-index:1000; background:black; width:100%;}
 #header h1 {  font-size: 20px; margin:0; height:40px; line-height:40px; display:block; background:black; padding-left:15px; }
 #header img {  padding:0; display:block; float:left; margin:5px 15px;   }
 #header h2  {  font-size: 18px; margin:0; padding:0; height:40px; line-height:40px;  }
 
 ul#sortmenu { float:right; }
-ul#sortmenu  li { float:right; width:125px; border-left:solid 1px #cccccc; height:40px; line-height:40px; text-align:center; display:block; background:#000000; color:#FFFFFF; }
-ul#sortmenu li:hover { background-color:#0E76A0; color:#FFF; cursor:pointer; font-size:120%; }
-ul#sortmenu li.selected { background-color:#1E96D0; color:#FFF; }
+ul#sortmenu  li { float:right; width:125px; border-left:solid 1px #ffffff; height:50px; line-height:50px; text-align:center; display:block; background:#000000; color:#FFFFFF; }
+
+ul#sortmenu li#romantique:hover{ background-color:#000000; color:#C078DF; cursor:pointer; font-size:130%; }
+ul#sortmenu li#romantique.selected { background-color:#C078DF; color:#000000; }
+
+ul#sortmenu li#restaurant:hover { background-color:#000000; color:#DFAF78; cursor:pointer; font-size:130%; }
+ul#sortmenu li#restaurant.selected { background-color:#DFAF78; color:#000000; }
+
+ul#sortmenu li#historique:hover { background-color:#000000; color:#BDF875; cursor:pointer; font-size:130%; }
+ul#sortmenu li#historique.selected { background-color:#BDF875; color:#000000; }
+
+ul#sortmenu li#ballade:hover { background-color:#000000; color:#78AEDF; cursor:pointer; font-size:130%; }
+ul#sortmenu li#ballade.selected { background-color:#78AEDF; color:#000000; }
+
+ul#sortmenu li#effrayant:hover { background-color:#000000; color:#DC5656; cursor:pointer; font-size:130%; }
+ul#sortmenu li#effrayant.selected { background-color:#DC5656; color:#000000; }
+
+ul#sortmenu li#bar:hover { background-color:#000000; color:#F5F779; cursor:pointer; font-size:130%; }
+ul#sortmenu li#bar.selected { background-color:#F5F779; color:#000000; }
+
+ul#sortmenu li#vue:hover { background-color:#000000; color:#78DFB1; cursor:pointer; font-size:130%; }
+ul#sortmenu li#vue.selected { background-color:#78DFB1; color:#000000; }
 
 /* Menu */
 
@@ -33,7 +52,7 @@ ul#sortmenu li.selected { background-color:#1E96D0; color:#FFF; }
 	padding : 0; /* pas de marge intérieure */
 	margin : 0; /* ni extérieure */
 	list-style : none; /* on supprime le style par défault de la liste */
-	line-height : 40px; /* on défini une hauteur pour chaque élément */
+	line-height : 50px; /* on défini une hauteur pour chaque élément */
 	text-align : center; /* on centre le texte qui se trouve dans la liste */
 	float:left;
 	z-index:1000;
@@ -42,25 +61,25 @@ ul#sortmenu li.selected { background-color:#1E96D0; color:#FFF; }
 #menu /* Ensemble du menu */
 {
 	font-weight : bold; /* on met le texte en gras */
-	font-family : Arial; /* on utilise Arial c'est plus beau ^^ */
-	font-size : 12px; /* hauteur du texte : 12 pixels */
+	font-family : Blippo, fantasy; /* on utilise Arial c'est plus beau ^^ */
+	font-size : 18px; /* hauteur du texte : 12 pixels */
 }
 
 #menu a /* Contenu des listes */
 {
 	display	: block; /* on change le type d'élément, les liens deviennent des balises de type block */
 	padding	: 0; /* aucune marge intérieure */
-	background-color:#ffffff;
-	color : #1E96D0; /* couleur du texte */
+	background-color:#000000;
+	color : #ffffff; /* couleur du texte */
 	text-decoration : none; /* on supprime le style par défault des liens (la pluspart du temps = souligné) */
-	width :225px; /* largeur */
+	width :115px; /* largeur */
 }
 
 #menu li /* Elements des listes */	
 { 
 	float : left; 
 	/* pour ie qui ne reconnait pas "transparent" */
-	border-right : 1px solid #1E96D0; /* on met une bordure blanche à droite de chaque élément */
+	border-right : 1px solid #ffffff; /* on met une bordure blanche à droite de chaque élément */
 }
 
 /* ie ne reconnaissant pas le sélecteur ">" */
@@ -69,60 +88,10 @@ html>body #menu li
 	border-right: 1px solid transparent ; /* on met une bordure transparante à droite de chaque élément */
 }
 
-#menu li ul /* Sous-listes */
-{ 
-	position: absolute; /* Position absolu */
-	width: 225px; /* Largeur des sous-listes */
-	left: -999em; /* Hop, on envoi loin du champ de vision */
-}
-
-
-#menu li ul li /* Eléments de sous-listes */
-{
-	/* pour ie qui ne reconnait pas "transparent" (comme précédement) */
-	border-top : 1px solid #1E96D0; /* on met une bordure blanche en haut de chaque élément d'une sous liste */
-}
-
-/* ie ne reconnaissant pas le sélecteur ">" */
-html>body #menu li ul li		
-{
-	border-top : 1px solid transparent; /* on met une bordure transparante en haut de chaque élément */
-}
-
-#menu li ul ul 
-{
-	margin		: -22px 0 0 200px ; /* On décale les sous-sous-listes qu'elles ne soient pas au dessus des sous-listes */	
-	/* pour ie qui ne reconnait pas "transparent" (comme précédement) */
-	border-left	: 1px solid #1E96D0 ; /* Petite bordure à gauche pour ne pas coller ... */	
-}
-
-/* ie ne reconnaissant pas le sélecteur ">" ... je me répète ;-) */
-html>body #menu li ul ul		
-{
-	border-left	: 1px solid transparent ; /* on met une bordure transparante sur la gauche de chaque élément */
-}
-
-#menu a:hover, #menu li ul a:hover /* Lorsque la souris passe sur un des liens */	
-{
-	color: #ffffff; /* On passe le texte en noir ... */
-	background-color:#1E96D0; /* ... et au contraire, le fond en blanc */
-}
-
-#menu li:hover ul ul, #menu li.sfhover ul ul /* Sous-sous-listes lorsque la souris passe sur un élément de liste */
-{
-	left: -999em; /* On expédie les sous-sous-listes hors du champ de vision */
-}
-
-#menu li:hover ul, #menu li li:hover ul, #menu li.sfhover ul, #menu li li.sfhover ul  /* Sous-listes lorsque la souris passe sur un élément de liste ET sous-sous-lites lorsque la souris passe sur un élément de sous-liste */
-{
-	left: auto; /* Repositionnement normal */
-	min-height: 0; /* Corrige un bug */
-}
-
 
 /**** NoteBook ****/
 @media screen and (max-device-width: 1024px){
 	ul#sortmenu { float:right; }
-	ul#sortmenu  li { float:right; width:95px; border-left:solid 1px #cccccc; height:40px; line-height:40px; text-align:center; display:block; }
-	ul#sortmenu li:hover { background-color:#1E96D0; color:#FFF; cursor:pointer; }
-	ul#sortmenu li.selected { background-color:#1E96D0; color:#FFF; }
+	ul#sortmenu  li { float:right; width:95px; border-left:solid 1px #ffffff; height:40px; line-height:40px; text-align:center; display:block; }
+	ul#sortmenu li:hover { background-color:#000000; color:#FFF; cursor:pointer; }
+	ul#sortmenu li.selected { background-color:#BDF875; color:#000000; }
