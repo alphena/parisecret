@@ -144,17 +144,11 @@
 			
 			function setMarkers(map) {
 				
-//				var shape = {
-//					coords: [1, 1, 1, 30, 30, 30, 30, 1],
-//					type: 'poly'
-//				};
-				
 				var infoWindow = new google.maps.InfoWindow();
 
 				
 				for (var i = 0; i < endroits.length; i++) {
 					var endroit = endroits[i];
-//					var image = choisirIcone(endroit[3]);
 					var image = {
 						url: choisirIcone(endroit[3]),
 						scaledSize: new google.maps.Size(40,53),
@@ -166,7 +160,6 @@
 						map: map,
 						icon: image,						
 						title: endroit[0],
-//						shape: shape,
 						type: endroit[3],
 						texte: endroit[4],
 						urlphoto: endroit[5],
@@ -177,24 +170,6 @@
 					var boxText = document.createElement("div");
 					boxText.style.cssText = "border: 1px solid black; margin-top: 8px; background: yellow; padding: 5px;";
 				
-//					var myOptions = {
-//						content: boxText
-//						disableAutoPan: false,
-//						maxWidth: 0,
-//						pixelOffset: new google.maps.Size(-140, 0),
-//						zIndex: 1,
-//						boxStyle: { 
-//							background: "url('tipbox.gif') no-repeat"
-//							opacity: 0.75,
-//							width: "280px"
-//						},
-//						closeBoxMargin: "10px 2px 2px 2px",
-//						closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif",
-//						infoBoxClearance: new google.maps.Size(1, 1),
-//						isHidden: false,
-//						pane: "floatPane",
-//						enableEventPropagation: false
-//					};
 				
 					(function (marker,endroit) {
 						google.maps.event.addListener(marker,"click",function () {
@@ -209,22 +184,7 @@
 						marker.addListener('mouseout', function() {
 							infoWindow.close(map,marker);
 						});
-					
-//						var ib = new InfoBox(myOptions);
-
-//						google.maps.event.addListener(marker, "mouseover", function () {
-//							ib.close();
-//							ib.setOptions(myOptions);
-//							ib.open(map, this);  
-//						});
-					
-					
-//						google.maps.event.addListener(marker, 'mouseover', function() {
-//							infobox.open(map, this);
-//							map.panTo(marker.position);
-//						});
 									
-						
 					})(marker,endroit);
 					theMarkers.push(marker);
 				}
