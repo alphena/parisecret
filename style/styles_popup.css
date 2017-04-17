@@ -1,0 +1,207 @@
+
+/* Le fond blanc qui s'affiche sous nos popups */			
+			.backgroundblanc {
+				visibility: hidden;
+				opacity: 0.4; 
+				background-color: #eeeeee;
+				position: fixed;
+				top: 0px;
+				bottom: 0px;
+				left: 0px;
+				right: 0px;
+				z-index: 2;
+			}
+
+/*La popup en elle-même, invisible avant qu'on clique sur un marqueur */			
+			.popup {
+				visibility: hidden;
+				border-radius: 1px;
+				z-index: 3;				
+			} 
+			
+			.popuptext {
+				width: 90%;
+				margin: auto;
+				text-align: justify;
+				color: #eeeeee;
+				font-size: 14px;
+				z-index: 4;
+				margin-top: 10px;
+			}
+			
+			.popuptitle {
+				text-transform: uppercase;
+				text-align: center;
+				color: #ffffff;
+				font-size: 20px;
+				z-index: 4;
+				padding-top: 5px;
+				font-family: 'Oswald', sans-serif;
+			}
+			
+			.popupimage {
+				width: 90%;
+				margin: auto;				
+			}
+			
+			#myPopup {
+				background-color: rgba(22,22,22,0.8);
+				width: 50%;
+				position: absolute;
+				top: 0px;
+				bottom: 0px;
+				margin-top: 7%;
+				margin-bottom: 10%;
+				margin-left: 25%;
+			}
+			
+			#titrepopup {
+				width: 90%;
+				margin: auto;
+				margin-bottom: 10px;
+			}
+			
+			#blocinfo {
+				position: absolute; 
+				width: 100%;
+				overflow: auto;
+				bottom: 0;
+				margin-bottom: 130px;
+				top: 0;
+				margin-top: 60px;
+
+			}
+			
+			#blocadresse {
+				margin-bottom: 10px;
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+			}
+			
+			#metro {
+				height: 40px;
+			}
+			
+/* Et le bouton qui permet de fermer la popup */			
+			#popupbutton {
+				position: fixed;
+				right: 0;
+				margin-right: 25%;
+				top: 0px;
+				margin-top: 7%;
+				border: none;
+				color: #eeeeee;
+				padding-top: 10px; 
+				padding-right: 10px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 20px;
+				font-weight: bold;
+				cursor: pointer;
+				border-radius: 1px;
+				z-index: 4;
+				font-family: sans-serif;
+			}
+			
+/* Les classes '.show' et '.show2' sont rajoutées au css des popups par le javascript pour les rendre visibles. */
+			
+			.show {
+				visibility: visible;
+				-webkit-animation: fadeIn 1s;
+				animation: fadeIn 1s;
+			}
+			
+			.show2 {
+				visibility: visible;
+			}
+			
+			@-webkit-keyframes fadeIn {
+				from {opacity: 0;}
+				to {opacity: 1;}
+			}
+
+			@keyframes fadeIn {
+				from {opacity: 0;}
+				to {opacity:1 ;}
+			}
+			
+/*La popup d'informations sur nous, qui remplace le footer avec non noms (quand l'écran est petit) */			
+			
+			#infos {
+				background-color: rgb(22,22,22);
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				color: #eeeeee;
+				font-size: 14px;
+				padding: 200px 20px;
+				font-family: 'Roboto', sans-serif;
+				text-align: justify;
+			}
+			
+			#popupbutton2 {
+				position: fixed;
+				top: 0;
+				right: 0;
+				margin-right: 20px;
+				margin-top: 20px;
+				font-size: 20px;
+				font-weight: bold;
+				cursor: pointer;
+				color: #eeeeee;
+			}
+
+/* Les changements de style lors du changement de la taille de l'ecran */
+			
+			@media (max-width: 700px) {
+				#myPopup {
+				width: 90%!important;
+				margin-top: 7%!important;
+				margin-bottom: 10%!important;
+				margin-left: 5%!important;
+				}
+				#popupbutton {
+				margin-right: 5%;	
+				}
+			}
+			
+			@media (max-width: 400px) {
+				#myPopup {
+				width: 100%!important;
+				margin-top: 0!important;
+				margin-bottom: 0!important;
+				margin-left: 0!important;
+				opacity: 1!important;
+				}
+				#popupbutton {
+				margin-right: 0;
+				margin-top: 0;
+				}
+			}
+			
+/* Et les trucs webkits pour styler les scrollbars (seulement pour les browsers qui supportent webkit) */
+			
+		::-webkit-scrollbar
+		{
+			width: 10px;
+		}
+ 
+		::-webkit-scrollbar-track
+		{
+		-webkit-box-shadow: inset 0 0 6px (0,0,0,0);
+		border-radius: 6px;
+		}
+ 
+		::-webkit-scrollbar-thumb
+		{
+		border-radius: 10px;
+		-webkit-box-shadow: inset 10px 5px 6px rgba(204,204,204,0.5);
+				
+		}
+		
+		
+		
