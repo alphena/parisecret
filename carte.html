@@ -46,7 +46,7 @@
 						<li class="active" id='promenade' onmouseover="colorier(this)" onmouseout="backtonormal(this)" onclick="afficherMarkers(this)">Promenades</li>
 						<li class="aboutus">
 							<button onclick="popupInfos()" class="infosbutton">A propos</button>
-							<span><img src="images/uk_flag.png" class="languebutton uk"/></span>
+							<span onclick="anglais()"><img src="images/uk_flag.png" class="languebutton uk"/></span>
 							<span><img src="images/france_flag.png" class="languebutton france"/></span>
 						</li>
 					</ul>
@@ -85,11 +85,17 @@
 		</div>
 		<div class="popup" id="popupbutton2" onclick="popupInfos()">X</div>
 	
+		<div class="popup" id="construction">
+			<p id="popupbutton3" onclick="anglais()">X</p>
+			La version anglaise de notre site est actuellement en construction, elle sera disponible prochainement. 
+			<br>The English version of our website is currently being designed, it will soon be available.
+		</div>  
+	
 		<!-- Le footer avec les infos -->
 	
 		<div id="footer">																
 			<span style="float: left">Envie de partir a la découverte de Paris ?</span>
-			<span style="float: left"><img src="images/uk_flag.png" class="flagimage"/></span>
+			<span style="float: left"><img src="images/uk_flag.png" class="flagimage" onclick="anglais()"/></span>
 			<span style="float: left"><img src="images/france_flag.png" class="flagimage"/></span>
 			<span style="float: right">Développé et maintenu par : M.Guilloré, O. Guillouet-Lamy, L. Hascoet, M.Aniel-Buchheit et L. Guillot</span>
 		</div>					
