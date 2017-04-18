@@ -155,6 +155,36 @@
 				color: #eeeeee;
 			}
 
+/*La popup 'attention travaux' */	
+
+			#construction { 
+				background-color: rgb(22,22,22);
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+				width: 300px;
+				height: 180px;
+				color: #eeeeee;
+				font-size: 14px;
+				font-family: 'Roboto', sans-serif;
+				text-align: justify;
+				padding: 5px 20px 20px 20px;
+			}
+			
+			#popupbutton3 {
+				padding: 0px 0px 0px 0px;
+				margin: 0;
+				position: relative;
+				left: 245px;
+				font-size: 20px;
+				font-weight: bold;
+				cursor: pointer;
+				color: #eeeeee;
+			}
+			
 /* Les changements de style lors du changement de la taille de l'ecran */
 			
 			@media (max-width: 700px) {
