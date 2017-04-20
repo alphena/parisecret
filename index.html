@@ -1,0 +1,110 @@
+<html>
+	<head>
+		<title>PARIS-ci par là</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- Liens pour faire marcher bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		<!-- Lien vers les feuilles de style -->
+		<!-- Il faut que ces liens restent en-dessous des liens pour bootstrap -->
+		<link rel="stylesheet" type="text/css" href="style/styles_carte.css" />
+		<link rel="stylesheet" type="text/css" href="style/styles_popup.css" />  
+
+		<!-- Lien pour les polices du texte -->
+		<link href="https://fonts.googleapis.com/css?family=Oswald|Roboto" rel="stylesheet">
+
+	</head>
+	
+	<body>
+	
+	<!-- Barre d'affichage des différents marqueurs -->
+	
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    	<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>   
+					</button>
+					<div>
+						<img class="navbar-image" src="images/logo.png" style="height: 40px; float: left; margin-top:5px; margin-right: 15px" />
+						<span class="navbar-brand" style="color: white">PARIS-ci par l&agrave</span>
+					</div>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav navbar-right" id="sortMenu">
+						<li class="active" id='tout' onmouseover="colorier(this)" onmouseout="backtonormal(this)" onclick="afficherTout(this)">Tout afficher</li>
+						<li class="active" id='histoire' onmouseover="colorier(this)" onmouseout="backtonormal(this)" onclick="afficherMarkers(this)">Details d'histoire</li>
+						<li class="active" id='art' onmouseover="colorier(this)" onmouseout="backtonormal(this)" onclick="afficherMarkers(this)">Art urbain</li>
+						<li class="active" id='cinema' onmouseover="colorier(this)" onmouseout="backtonormal(this)" onclick="afficherMarkers(this)">Cinema</li>
+						<li class="active" id='bar' onmouseover="colorier(this)" onmouseout="backtonormal(this)" onclick="afficherMarkers(this)">Bars et restos</li>
+						<li class="active" id='promenade' onmouseover="colorier(this)" onmouseout="backtonormal(this)" onclick="afficherMarkers(this)">Promenades</li>
+						<li class="aboutus">
+							<button onclick="popupInfos()" class="infosbutton">A propos</button>
+							<span onclick="anglais()"><img src="images/uk_flag.png" class="languebutton uk"/></span>
+							<span><img src="images/france_flag.png" class="languebutton france"/></span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<!-- La carte -->
+		
+		<div id="googleMap"></div>  
+		
+
+		<!-- La popup qui s'affichera au-dessus de la carte -->
+		
+		<div class="popup" id="myPopup">
+			<div class="popuptitle" id="titrePopup"></div>
+			<div  id="blocinfo">
+				<div class="popupimage" id="imagePopup"></div>
+				<div class="popuptext" id="textePopup"></div>
+			</div>
+			<div class="popupbloc" id="blocadresse">
+				<div class="popuptext"><h4>Adresse :</h4></div>
+				<div class="popuptext" id="adressePopup"></div>
+				<div class="popuptext" id="metro">
+					<img alt="logo_metro" src="images/logometro.png" style="height:100%; float: left; margin-right:10px">
+					<span class="popuptext" id="metroPopup"></span>
+				</div>
+			</div>	
+		</div>
+		<div class="popup" id="popupbutton" onclick="popup()">X</div>
+		<div class="backgroundblanc" id="fondblanc" onclick="popup()"></div>
+	
+		<div class="popup" id="infos">
+			Ce site a pour but de vous faire découvrir des lieux inconnus, intéressants et libres d'accès à Paris. 
+			Il est développé et maintenu par M.Aniel-Buchheit, M.Guilloré, L. Guillot, O. Guillouet-Lamy et L. Hascoët.
+		</div>
+		<div class="popup" id="popupbutton2" onclick="popupInfos()">X</div>
+	
+		<div class="popup" id="construction">
+			<p id="popupbutton3" onclick="anglais()">X</p>
+			La version anglaise de notre site est actuellement en construction, elle sera disponible prochainement. 
+			<br>The English version of our website is currently being designed, it will soon be available.
+		</div>  
+	
+		<!-- Le footer avec les infos -->
+	
+		<div id="footer">																
+			<span style="float: left">Envie de partir a la découverte de Paris ?</span>
+			<span style="float: left"><img src="images/uk_flag.png" class="flagimage" onclick="anglais()"/></span>
+			<span style="float: left"><img src="images/france_flag.png" class="flagimage"/></span>
+			<span style="float: right">Développé et maintenu par : M.Aniel-Buchheit, M.Guilloré, L. Guillot, O. Guillouet-Lamy et L. Hascoët</span>
+		</div>					
+
+		<!-- Et les liens vers notre fichier javascript et vers chez google -->	
+		
+		<script src="script/scripts_carte.js"></script>
+
+		<script src="https://maps.googleapis.com/maps/api/js?&callback=myMap"></script>
+		
+	</body>
+</html>
